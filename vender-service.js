@@ -39,7 +39,7 @@ function VenderService(){
 
   //public parts
 
-  
+  //add money needs to increase the money amount, and return it to the view.  check if statement to added per click, subtract money on item purchase.
   this.addMoney = function(){
     money += .25
   }

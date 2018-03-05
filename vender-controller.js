@@ -15,6 +15,10 @@ function VenderController(){
   
   //we need a function to take money from our "view" and pass it to our service
 
+  //params passed to service for each button click.  Get back total value and display
+function addMoney() {
+    
+}
 
 
 }

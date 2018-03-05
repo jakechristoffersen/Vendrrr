@@ -9,16 +9,20 @@
   <title>Vendrrr</title>
 </head>
 <body>
+  <!-- container and row, bootstrap col-12 to span (adjust later for styling) -->
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
+        <!-- title and items are static -->
         <h1>Vendrrr!</h1>
         <h5>Items:</h5>
+        <!-- this is the id "items" used for vending selection, will populate inside the tags -->
         <div id="items" class="row">
 
         </div>
+        <!-- money button to add money to the array.  Money: can probably added to the object that is returned, add addMoney to controller, fires off event to add amount, and returns total to the view -->
         <h5 id="money">Money:</h5>
-        <button onclick="app.controllers.venderController.addMoney()">Add Quarter</button>
+        <button onclick="app.venderController.addMoney()">Add Quarter</button>
       </div>
     </div>
   </div>
