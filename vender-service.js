@@ -1,10 +1,8 @@
 function VenderService(){
-  //private parts
+ //money starts at 0
   var money = 0
-  var input
-  
-  //our purchaseable items, add some of your own!
-  //we could add an id property to these items to display location for purchasing(A1, D4, etc)
+
+  //items array, ID is used for the buy button and price/amount is checked against totals
   var items = [
     {
       name: "Fruit Snack Gummies",
@@ -21,7 +19,7 @@ function VenderService(){
       id: "A2"
     },
     {
-      name: "Admiral-able Ack-Bar",
+      name: "Admiral-able SnAck-Bar",
       description: "Snack like an Admiral.",
       price: .75,
       amount: 3,
@@ -43,34 +41,41 @@ function VenderService(){
     }
   ]
   
-  function Item(name, description, price, amount) {
-    this.name = name;
-    this.description = description;
-    this.price = price;
-    this.amount = amount;
-    this.id = id;
-  }
-
+//creates a copy of the items array, parses it as a string and create an array copy
   this.getItems = function() {
-    return items;
-  }
-
-  this.reduceAmount = function() {
-    this.amount - 1
-
-    if (amount >= 0) {
-      amount = 0
+    var itemsCopy = []
+    for (let i = 0; i < items.length; i++) {
+      var item = items[i]
+      itemsCopy.push(JSON.parse(JSON.stringify(item)))
     }
+    return itemsCopy;
   }
-  //public parts
 
-  //add money needs to increase the money amount, and return it to the view.  check if statement to added per click, subtract money on item purchase.
-  this.addMoney = function(input){
+  //
+  this.sellItem = function(id) {
+  for (let i = 0; i < items.length; i++) {
+    var item = items[i];
+    if (id == item.id && money >= item.price && item.amount > 0) {
+        item.amount--;
+        money -= item.price;
+        console.log(item, money)
+      }
 
-    money += .25
+    }
+
+  }
+
+  this.getMoney = function() {
+    var moneyCopy = {
+      money: money
+    }
+    return moneyCopy;
+  }
+
+  this.addMoney = function(btnInput) {
+    money += btnInput;
+
     console.log(money)
   }
-
-
 
 }

@@ -1,0 +1,21 @@
+.button-circle {
+    background-color: #9b9b9b;
+    width: 60px;
+    height: 60px;
+    padding: 0px 1px 15px ;
+    border-radius: 35px;
+    font-size: 44px;
+    line-height: 1.25;
+    box-shadow: 4px 4px;
+  }
+
+  .button-crcsml {
+    background-color: #504949;
+    width: 30px;
+    height: 30px;
+    padding: 0px 1px 0px ;
+    border-radius: 35px;
+    font-size: 12px;
+    line-height: 1.25;
+    box-shadow: 0 1px 1px rgba(255,255,255,0.7);
+  }
