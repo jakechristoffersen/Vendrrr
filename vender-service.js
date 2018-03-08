@@ -53,16 +53,13 @@ function VenderService(){
 
   //
   this.sellItem = function(id) {
-  for (let i = 0; i < items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
     var item = items[i];
-    if (id == item.id && money >= item.price && item.amount > 0) {
-        item.amount--;
-        money -= item.price;
-        console.log(item, money)
+      if (id == item.id && money >= item.price && item.amount > 0) {
+          item.amount--;
+          money -= item.price;      
       }
-
     }
-
   }
 
   this.getMoney = function() {
@@ -74,8 +71,6 @@ function VenderService(){
 
   this.addMoney = function(btnInput) {
     money += btnInput;
-
-    console.log(money)
   }
-
+  
 }
